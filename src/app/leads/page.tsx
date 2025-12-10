@@ -215,7 +215,12 @@ const MeetTheBoardPage: React.FC = () => {
                 alt={`Cloud ${i + 1}`}
                 width={355}
                 height={228}
-                style={{ position: 'absolute', ...pos, zIndex: 2 }}
+                style={{ 
+                  position: view === 'board' ? 'absolute' : 'fixed',
+                  ...pos, 
+                  zIndex: 2,
+                  pointerEvents: 'none'
+                }}
               />
             ));
           })()}
